@@ -35,7 +35,7 @@ let package = Package(
             name: "MyLibraryName",
             dependencies: [
             ],
-            path: "Sources/MyLibraryName/MyLibrarlyName.swift",
+            path: "Sources/MyLibraryName/MyLibraryName.swift",
             exclude: [
                 "Resources/README.txt",
             ],
