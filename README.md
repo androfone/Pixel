@@ -49,7 +49,7 @@ Select `File` -> `Swift Packages` -> `Add Package Dependency` and enter `https:/
 
 ```swift
 import SwiftUI
-import PixelKit
+import Pixel
 
 struct ContentView: View {
     @State private var isRefreshing: Bool = false
@@ -61,10 +61,10 @@ struct ContentView: View {
                 .padding()
                 .background(Color.white)
                 .cornerRadius(10)
-                .shadow(radius: 5) // Usando a função de sombra do PixelKit
+                .shadow(radius: 5) 
 
             Button(action: {
-                // Ativando a funcionalidade de refresh
+                
                 isRefreshing.toggle()
                 PixelKit.stylishRefreshable(isRefreshing: &isRefreshing, color: .blue, size: 30)
             }) {
@@ -73,18 +73,12 @@ struct ContentView: View {
                     .background(Color.blue)
                     .foregroundColor(.white)
                     .cornerRadius(10)
-                    .border(Color.gray, width: 2) // Usando a função de borda do PixelKit
+                    .border(Color.gray, width: 2)
             }
             .padding()
         }
         .padding()
-        .stylishRefreshable(isRefreshing: $isRefreshing, color: .blue, size: 30) // Usando a extensão do View
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+        .stylishRefreshable(isRefreshing: $isRefreshing, color: .blue, size: 30)
     }
 }
 ```
