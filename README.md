@@ -23,7 +23,7 @@
 
 <p>
     <img src="https://img.shields.io/badge/License-MIT-blue.svg" />
-    <img src="https://github.com/CypherPoet/MyLibraryName/workflows/Build%20&%20Test/badge.svg" />
+    <img src="https://github.com/androfone/Pixel" />
     <a href="https://github.com/apple/swift-package-manager">
       <img src="https://img.shields.io/badge/spm-compatible-brightgreen.svg?style=flat" />
     </a>
@@ -41,7 +41,7 @@ _[ A brief synopsis of this library ]._
 
 ### Xcode Projects
 
-Select `File` -> `Swift Packages` -> `Add Package Dependency` and enter `https://github.com/CypherPoet/MyLibraryName`.
+Select `File` -> `Swift Packages` -> `Add Package Dependency` and enter `https://github.com/androfone/Pixel`.
 
 ### Example
 
