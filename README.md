@@ -1,4 +1,4 @@
-# MyLibraryName
+# Pixel
 
 <!-- Header Logo -->
 
@@ -46,108 +46,54 @@ _[ A brief synopsis of this library ]._
 
 Select `File` -> `Swift Packages` -> `Add Package Dependency` and enter `https://github.com/CypherPoet/MyLibraryName`.
 
-### Swift Package Manager Projects
+### Example
 
-You can add `MyPackageName` as a package dependency in your `Package.swift` file:
+
 
 ```swift
-let package = Package(
-    //...
-    dependencies: [
-        .package(
-            url: "https://github.com/CypherPoet/MyLibraryName",
-            exact: "0.0.1"
-        ),
-    ],
-    //...
-)
+import SwiftUI
+import PixelKit
+
+struct ContentView: View {
+    @State private var isRefreshing: Bool = false
+
+    var body: some View {
+        VStack {
+            Text("Bem-vindo ao PixelKit!")
+                .font(.largeTitle)
+                .padding()
+                .background(Color.white)
+                .cornerRadius(10)
+                .shadow(radius: 5) // Usando a função de sombra do PixelKit
+
+            Button(action: {
+                // Ativando a funcionalidade de refresh
+                isRefreshing.toggle()
+                PixelKit.stylishRefreshable(isRefreshing: &isRefreshing, color: .blue, size: 30)
+            }) {
+                Text("Refresh")
+                    .padding()
+                    .background(Color.blue)
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
+                    .border(Color.gray, width: 2) // Usando a função de borda do PixelKit
+            }
+            .padding()
+        }
+        .padding()
+        .stylishRefreshable(isRefreshing: $isRefreshing, color: .blue, size: 30) // Usando a extensão do View
+    }
+}
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
+}
 ```
 
-<!-- 🔑 UNCOMMENT THE INSTRUCTIONS BELOW IF THE GITHUB REPO NAME MATCHES THE PACKAGE NAME 👇 -->
 
-<!--
 
-From there, refer to `MyLibraryName` as a "target dependency" in any of _your_ package's targets that need it.
+## Steps 
 
-```swift
-targets: [
-    .target(
-        name: "YourLibrary",
-        dependencies: [
-          "MyLibraryName",
-        ],
-        ...
-    ),
-    ...
-]
-```
-
--->
-
-<!-- 🔑 UNCOMMENT THE INSTRUCTIONS BELOW IF THE GITHUB REPO NAME DOESN'T MATCH THE PACKAGE NAME 👇 -->
-
-From there, refer to the `MyLibraryName` "product" delivered by the `MyPackageName` "package" inside of any of your project's target dependencies:
-
-```swift
-targets: [
-    .target(
-        name: "YourLibrary",
-        dependencies: [
-            .product(
-                name: "MyLibraryName",
-                package: "MyPackageName"
-            ),
-        ],
-        ...
-    ),
-    ...
-]
-```
-
-<!-- Proceed from above choice accordingly (and delete this comment) -->
-
-Then simply `import MyLibraryName` wherever you’d like to use it.
-
-<!--
-    🔑 UNCOMMENT THE INSTRUCTIONS BELOW IF USING THE `@_exported` feature
-    might be handy. 👇
--->
-
-<!-- **📝 Note:** To make the library available to your entire project, you could also leverage the [functionality of the `@_exported` keyword](https://forums.swift.org/t/package-manager-exported-dependencies/11615) by placing the following line somewhere at the top level of your project:
-
-```swift
-@_exported import MyLibraryName
-``` -->
-
-## Usage
-
-## 🗺 Roadmap
-
-- World Domination
-
-## 💻 Developing
-
-### Requirements
-
-- Xcode 14.0+
-
-### ✍️ Building The Documentation
-
-Documentation is built with [DocC](https://developer.apple.com/documentation/docc) (see [Apple's guidance for more details about creating DocC content](https://developer.apple.com/documentation/docc/api-reference-syntax)).
-
-To build and preview the documentation output, follow the instructions for the [here](https://github.com/apple/swift-docc-plugin#previewing-documentation) for the `Swift-DocC Plugin`.
-
-If you're using VSCode, there's also a [task configuration](./.vscode/tasks.json) that will handle this directly from the editor 💪
-
-## 🏷 License
-
-`MyPackageName` is available under the MIT license. See the [LICENSE file](./LICENSE) for more info.
-
-## Steps For Using This Template
-
-- [ ] Rename instances of `MyLibraryName` to the library's product name.
-- [ ] Rename files and directories with names of `MyLibraryName` to the library's product name.
-- [ ] Rename instances of `MyPackageName` to the library's Swift package name.
-- [ ] Update supported platforms in `Package.swift` and in this README's badges as appropriate.
-- [ ] Replaces instances of `[ A brief synopsis of this library ]` with the library's short description.
-- [ ] Delete this section.
+- [ ] Add in your Swift Editor
